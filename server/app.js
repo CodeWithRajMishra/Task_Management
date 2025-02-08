@@ -2,10 +2,13 @@ const express= require("express");
 const app= express();
 const cors= require("cors");
 const mongoose=require("mongoose");
+require("dotenv").config();
 const adminRoute= require("./routes/adminRoute");
 const empRoute= require("./routes/employeeRoute");
 const bodyparser = require('body-parser');
-mongoose.connect("mongodb://127.0.0.1:27017/pm6task").then(()=>{
+const dbconn=process.env.DBCONN;
+const port=process.env.PORT || 8000;
+mongoose.connect(dbconn).then(()=>{
     console.log("DB connected!");
 })
 app.use(cors());
@@ -18,6 +21,6 @@ app.use("/employee", empRoute);
 
 
 
-app.listen(8080, ()=>{
+app.listen(port, ()=>{
     console.log("Server run on 8080 port!");
 })
