@@ -14,7 +14,7 @@ const Login=()=>{
       if (usertype=="admin")
       {           
            try {
-            let api="http://localhost:8080/admin/adminlogin";
+            let api="https://task-management-2gc9.onrender.com/admin/adminlogin";
             const response= await axios.post(api, {userid:userid, password:password});
             console.log(response.data);
             if (response.status==200)
@@ -35,7 +35,7 @@ const Login=()=>{
       {
          try {
              
-          let api="http://localhost:8080/employee/employeelogin";
+          let api="https://task-management-2gc9.onrender.com/employee/employeelogin";
           const response= await axios.post(api, {userid:userid, password:password});
           console.log(response.data);
            if (response.status==200)

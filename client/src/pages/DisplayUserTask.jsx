@@ -11,7 +11,7 @@ const DisplayUserTask=()=>{
 
     const loadData=async()=>{
         try {
-            let api="http://localhost:8080/employee/employeetaskdisplay";
+            let api="https://task-management-2gc9.onrender.com/employee/employeetaskdisplay";
              const response= await axios.post(api, {empid:empid});
              setMydata(response.data);
              console.log(response.data);
@@ -27,7 +27,7 @@ const DisplayUserTask=()=>{
 
     const taskSubmit=async(taskid)=>{
         try {
-            let api="http://localhost:8080/employee/employeetasksubmit";
+            let api="https://task-management-2gc9.onrender.com/employee/employeetasksubmit";
              const response= await axios.post(api, {taskid:taskid, taskstatus:taskStatus });
              alert(response.data);
              loadData();

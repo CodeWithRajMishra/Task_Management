@@ -26,7 +26,7 @@ const UserReport=()=>{
 
 
  const reassignTask=async(taskid)=>{
-    let api="http://localhost:8080/admin/taskreassing";
+    let api="https://task-management-2gc9.onrender.com/admin/taskreassing";
     try {
         const response = await axios.post(api, {taskid:taskid});
        message.success(response.data.msg);

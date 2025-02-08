@@ -22,7 +22,7 @@ const AssignTask=()=>{
 
 
   const handleSubmit=async()=>{
-    let api="http://localhost:8080/admin/assigntask";
+    let api="https://task-management-2gc9.onrender.com/admin/assigntask";
 
     try {
          const response = await axios.post(api, {empid:empId, ...input});
@@ -34,7 +34,7 @@ const AssignTask=()=>{
   }
 
     const loadData=async()=>{
-        let api="http://localhost:8080/admin/assigntaskdisplay";
+        let api="https://task-management-2gc9.onrender.com/admin/assigntaskdisplay";
         try {
             const response= await axios.get(api);
             setMydata(response.data);
